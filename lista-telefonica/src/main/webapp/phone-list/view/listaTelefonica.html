@@ -1,0 +1,29 @@
+<span class="fa fa-list-alt fa-3x"></span>
+<h1> Lista Telefônica</h1>
+
+<form name="contatoForm">
+	<input type="text" ng-model="listaTelefonica.nome" name="nome" ng-required="true" placeholder="Nome"/>
+	<select ng-model="listaTelefonica.setor" ng-options="setor.nome for setor in setores" name="setor" ng-required="true"></select>
+	<input type="text" ng-model="listaTelefonica.telefone" name="telefone" ng-required="true" ng-pattern="/\d{4}-\d{4}/" placeholder="Telefone"/>
+	<input type="number" ng-model="listaTelefonica.ramal" name="ramal" ng-required="true" placeholder="Ramal"/>
+	<button ng-click="adicionarContato(listaTelefonica)" ng-disabled="contatoForm.$invalid">Adicionar</button>
+</form>
+
+<br>
+
+<table border="1" ng-if="contatos.length">
+	<tr>
+		<th>Nome</th>
+		<th>Setor</th>
+		<th>Telefone</th>
+		<th>Ramal</th>
+	</tr>
+	<tr ng-repeat="contato in contatos">
+		<td>{{contato.nome}}</td>
+		<td>{{contato.setor.label}}</td>
+		<td>{{contato.telefone}}</td>
+		<td>{{contato.ramal}}</td>
+		<td><button ng-click="removerContato(listaTelefonica)">Remover</button></td>
+	</tr>
+
+</table>
