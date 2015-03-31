@@ -11,7 +11,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($sc
 
 	$scope.carregarDepartamento = function(){  /*usa o _ na variavel quando for variavel local*/
 
-		listaTelefonicaFactory.factory("http://localhost:8080/phonelist/department").success(function (data,status){
+		listaTelefonicaFactory.factory("http://localhost:8080/phonelist/api/department").success(function (data,status){
 			$scope.setores = data;
 		});	
 	};
