@@ -4,7 +4,7 @@
 <form name="contatoForm">
 	<input type="text" ng-model="listaTelefonica.nome" name="nome" ng-required="true" placeholder="Nome"/>
 	<select ng-model="listaTelefonica.setor" ng-options="setor.nome for setor in setores" name="setor" ng-required="true"></select>
-	<input type="text" ng-model="listaTelefonica.telefone" name="telefone" ng-required="true" ng-pattern="/\d{4}-\d{4}/" placeholder="Telefone"/>
+	<input type="text" ng-model="listaTelefonica.telefone" name="telefone" ng-required="true" ng-pattern="/\^(?\d{2}\)? ?\d{4}[ -]?\d{4,5}$/" placeholder="Telefone"/>
 	<input type="number" ng-model="listaTelefonica.ramal" name="ramal" ng-required="true" placeholder="Ramal"/>
 	<button ng-click="adicionarContato(listaTelefonica)" ng-disabled="contatoForm.$invalid">Adicionar</button>
 </form>
