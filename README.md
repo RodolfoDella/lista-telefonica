@@ -11,4 +11,4 @@ O objetivo desse projeto e entender como montar uma aplicação Web utilizando u
 - Angular JS para manipular o DOM
 - Font Awesome para icones de fontes e CSS toolkit.
 
-A parte de Fronend está organizada seguindo o modelo Specific Style, um arquivo para cada componente.
+A parte de Frontend está organizada seguindo o modelo Specific Style, um arquivo para cada componente.
