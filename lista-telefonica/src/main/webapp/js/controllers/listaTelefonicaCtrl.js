@@ -11,7 +11,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($sc
 
 	$scope.carregarDepartamento = function(){  /*usa o _ na variavel quando for variavel local*/
 
-		listaTelefonicaFactory.factory("http://localhost:8080/phonelist/api/department").success(function (data,status){
+		listaTelefonicaFactory.factory("/phonelist/api/department").success(function (data,status){
 			$scope.setores = data;
 		});	
 	};
@@ -31,5 +31,21 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($sc
 		var indice = $scope.contatos.indexOf(listaTelefonica);
 		$scope.contatos.splice(indice, 1);
 	}
+	
+	// dropdown - inicio
+	$scope.status = {
+		isopen: false
+	};
 
+	$scope.toggled = function(open) {
+		$log.log('Dropdown is now: ', open);
+	};
+
+	$scope.toggleDropdown = function($event) {
+		$event.preventDefault();
+		$event.stopPropagation();
+		$scope.status.isopen = !$scope.status.isopen;
+	};
+	// dropdown - fim
+	
 });

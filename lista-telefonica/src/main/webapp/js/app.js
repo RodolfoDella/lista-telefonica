@@ -1,4 +1,4 @@
-angular.module("listaTelefonica", ['ngRoute']);
+angular.module("listaTelefonica", ['ngRoute', 'ui.bootstrap']);
 
 
 angular.module("listaTelefonica").config(function($routeProvider) {
